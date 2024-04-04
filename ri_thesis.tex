@@ -5,11 +5,11 @@
 %% You should not need to mess around with this file unless you want to tinker.
 
 
-\documentclass[12pt]{ri_thesis}
+\documentclass[12pt]{src/ri_thesis}
 
 % All packages go in here
-\input{thesis-packages}
-\input{thesis-headers}
+\input{src/thesis-packages}
+\input{src/thesis-headers}
 
 % Page layout: approx 1" margins.
 \usepackage[
@@ -29,8 +29,8 @@
 %% \overfullrule=5pt
 
 % Macros and color definitions.
-\input{thesis-macros}
-\input{thesis-colors}
+\input{src/thesis-macros}
+\input{src/thesis-colors}
 
 \begin {document}
 
@@ -49,24 +49,10 @@
 
 \maketitle
 
-\begin{dedication}
-\input{thesis-dedication}
-\end{dedication}
-
-\pagestyle{plain} % for toc, was empty
-
-% The content of the thesis is broken up into many individual files.
-\begin{abstract}
-\input{thesis-abstract.tex}
-\end{abstract}
-
-\begin{acknowledgments}
-\input{thesis-acknowledgments}
-\end{acknowledgments}
-
-\begin{funding}
-\input{thesis-funding}
-\end{funding}
+% Preface
+\IfFileExists{./thesis-preface}{
+    \input{thesis-preface}
+}
 
 % Table of contents: Make links black, add a hyperlink target, and disable
 % microtype (as per the docs).

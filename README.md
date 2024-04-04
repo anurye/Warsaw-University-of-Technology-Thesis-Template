@@ -1,23 +1,16 @@
-RI-thesis template
+Warsaw University of Technology thesis template
 ==================
-LaTeX template for a CMU Robotics Institute Thesis
+LaTeX template for a Warsaw University of Technology thesis. 
 
-TODO
- - (maybe) add example of tikz graph.
+This template follows the guidelines specified in the [Diploma Exam](https://cs50.harvard.edu/python/2022/psets/0/) page of the Faculty of Power and Aeronautical Engineering. 
 
-Includes the following:
- - Tikz and pgfplots for generating figures and plots.
- - TODO [Matt]
-
-Usage
------
-
-This template was tested with TeX Live 2017, which includes all required packages. Mac users: this is included as part of OSX and TeXShop. After successfully installing TeX Live, compile the PDF file using your favorite build tool (we tested with make on OSX).
-
-For more details, see thesis-introduction.tex (or Chapter 1 of the compiled PDF).
+> [!IMPORTANT]
+> Please note that this is NOT an official template - The requirements my change and you should check before using it.
 
 Requirements
 ------------
 texlive-full
 
-TODO [Matt] finish up
+Reference
+------------
+[ri-thesis-template](https://github.com/felixduvallet/ri-thesis-template)

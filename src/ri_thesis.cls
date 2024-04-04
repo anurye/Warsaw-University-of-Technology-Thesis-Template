@@ -15,10 +15,15 @@
 
 \def\title#1{\gdef\@title{#1}}
 \def\author#1{\gdef\@author{#1}}
-\def\date#1{\gdef\@date{#1}}
+\def\indexNumber#1{\gdef\@indexNumber{#1}}
+\def\supervisor#1{\gdef\@supervisor{#1}}
+\def\institute#1{\gdef\@institute{#1}}
+\def\fieldOfStudy#1{\gdef\@fieldOfStudy{#1}}
+\def\specialisation#1{\gdef\@specialisation{#1}}
+% \def\date#1{\gdef\@date{#1}}
 \def\Year#1{\gdef\@Year{#1}}
-\def\trnumber#1{\gdef\@trnumber{#1}}
-\def\committee#1{\gdef\@committee{#1}}
+% \def\trnumber#1{\gdef\@trnumber{#1}}
+% \def\committee#1{\gdef\@committee{#1}}
 \def\permission#1{\gdef\@permission{#1}}
 \def\support#1{\gdef\@support{#1}}
 \def\disclaimer#1{\gdef\@disclaimer{#1}}
@@ -50,54 +55,62 @@
 %
 \let\footnoterule\relax
 \vglue\@cutoutvskip
-\begin{center}
-%\begin{minipage}[t]{4.875in}   % must be a minipage due to \thanks
-\begin{minipage}[t]{4.8in}      % hackery
-\vbox to 2in{
-\vfill
-\begin{center}
-{\Large \strut \@title\par}
-\vfill
-{\large \begin{tabular}[t]{c}\@author\end{tabular}\par}
-\vfill
-{\large \sc \@trnumber\par}
-\vfill
-{\large \@date\par}
-\end{center}
-\vfill}
-\end{minipage}
-\end{center}
 
-% CMU seal logo -- also links to the table of contents.
-\begin{figure}[!htb]
-  \centering
-  \scalebox{.2}{
+% WUT seal logo -- also links to the table of contents.
+\begin{center}
     \hyperlink{contents}{  % Link To TOC -- define label in main file.
-      \includegraphics{figs/cmu_seal.png}
-  }}
-\end{figure}
-
-\begin{center}
-  The Robotics Institute \\
-  School of Computer Science \\
-  Carnegie Mellon University \\
-  Pittsburgh, PA
+        \includegraphics[width=\textwidth]{src/figs/wut_seal.jpg}
+    }
 \end{center}
 
-\vfill
-
+% Name of unit
 \begin{center}
-    {\bf Thesis Committee:} \\
-    \@committee
+\fontsize{12}{14} \selectfont \@institute \par
+\end{center}
+
+% Study cycle
+\begin{center}
+\includegraphics[width=\textwidth]{src/figs/study_cycle.jpg}
+\end{center}
+
+% Field and specialisation
+\begin{center}
+in the field of study \@fieldOfStudy \par
+and specialisation \@specialisation \par
+\end{center}
+
+% Thesis title
+\vspace{2em}
+\begin{center}
+    \begin{minipage}[t]{.8\textwidth}
+        \vfill
+        \begin{center}
+            {\fontsize{14}{16} \selectfont \@title \par}
+        \end{center}
+        \vfill
+    \end{minipage}
+\end{center}
+\vspace{2em}
+
+% Author
+\begin{center}
+    {\fontsize{21}{24} \selectfont \@author \par} 
+    {\fontsize{12}{14} \selectfont student record book number {\@indexNumber}}
 \end{center}
 \vspace{1em}
+
+% Advisor
 \begin{center}
-    \em
-    Submitted in partial fulfillment of the requirements \\
-    for the degree of Doctor of Philosophy in Robotics.
+    {\fontsize{12}{14} \selectfont thesis supervisor \par \@supervisor}
 \end{center}
 
+% Year
 \vfill
+\begin{center}
+    {\fontsize{12}{14} \selectfont Warsaw, \@Year \par}
+\end{center}
+
+% \vfill
 
 \@ifundefined{@permission}{\@copyrightnotice{Copyright \copyright\ \@Year\ \@author}}{\@copyrightnotice{Copyright \copyright\ \@Year\ \@author. \@permission}}
 
