@@ -1,8 +1,9 @@
-% cls file for a Robotics Institue thesis.
+% cls file for a Warsaw University of Technology thesis.
 %
-% Author: Felix Duvallet <felixd@gmail.com>
-% Adapted from David Koe's SCS thesis template:
-% http://www.cs.cmu.edu/~dkoes/links.html
+% Author: Ahmed Yesuf Nurye <anurye.yesuf@gmail.com>
+%
+% Based on cls file for a Robotics Institute Thesis by: 
+%                            Felix Duvallet <felixd@gmail.com>
 
 \LoadClassWithOptions{book}
 
