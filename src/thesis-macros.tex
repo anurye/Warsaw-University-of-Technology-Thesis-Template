@@ -23,3 +23,20 @@
   \let\thempfn\relax% Remove footnote number printing mechanism
   \footnotetext[0]{\emph{#1}}% Print footnote text
 }}
+
+%% This will add the subgroups, e.g, for nomenclature
+%----------------------------------------------
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+  \item[\bfseries
+  \ifstrequal{#1}{A}{Physics Constants}{%
+  \ifstrequal{#1}{B}{Number Sets}{%
+  \ifstrequal{#1}{C}{Other Symbols}{}}}%
+]}
+%----------------------------------------------
+% -----------------------------------------
+%% This will add the units
+%----------------------------------------------
+\newcommand{\nomunit}[1]{%
+\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+%----------------------------------------------

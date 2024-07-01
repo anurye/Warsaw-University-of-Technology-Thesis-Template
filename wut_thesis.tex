@@ -74,9 +74,9 @@
 \tableofcontents
 \chapternote{\hspace{-12pt}When this dissertation is viewed as a PDF, the page header is a link to this Table of Contents.}
 \clearpage
-\listoffigures
-\clearpage
-\listoftables
+% \listoffigures
+% \clearpage
+% \listoftables
 \microtypesetup{protrusion=true}
 
 
@@ -121,4 +121,29 @@
 
 % No whitespace allowed in the reference files list, ever.
 \bibliography{bibliography/references}
+
+
+%%%%%%%%%%%%%%%
+\clearpage
+% Nomenclature
+\hypersetup{linkcolor=black}  % Make TOC links black.
+\IfFileExists{./thesis-preface/thesis-nomenclature}{
+    \input{./thesis-preface/thesis-nomenclature}
+}
+
+\hypertarget{contents}{}
+\microtypesetup{protrusion=false}
+
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+\microtypesetup{protrusion=true}
+
+%%%%%%%%%%%%%%%
+
+
 \end{document}
