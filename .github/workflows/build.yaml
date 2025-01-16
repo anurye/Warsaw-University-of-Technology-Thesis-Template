@@ -1,0 +1,28 @@
+name: Build LaTex Document
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      
+      - name: Compile LaTex document
+        run: make
+      
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-pdf
+          path: wut_thesis.pdf
